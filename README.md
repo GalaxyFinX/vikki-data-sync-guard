@@ -1,7 +1,7 @@
 # vikki-data-sync-guard.
 ## Overview
 
-`@galaxyfins/vikki-data-sync-guard` is a library designed to manage and synchronize data for mini apps based on app name and app permissions.
+`@galaxyfins/vikki-data-sync-guard` is a library designed to manage and synchronize data for mini apps based on app permissions.
 
 ## Installation
 
@@ -11,22 +11,43 @@ To install the library, use npm:
 npm install @galaxyfins/vikki-data-sync-guard
 ```
 
+Mini apps will get file service config from host app portal then place in root mini app directory.
+Example service config file format:
+```bash
+{
+  "project_info": {
+    "project_number": "1",
+    "project_id": "Vikki",
+  },
+  "client": {
+      "app_id": "mini_app_example",
+      "permissions": [
+        "user_info": {
+          "fullName": "read",
+          "email": "read"
+        }
+      ]
+    }
+  ,
+  "configuration_version": "1"
+}
+```
+
 ## Usage
 
-To use the `@galaxyfins/vikki-data-sync-guard` library, you need to get an instance of `VikkiDataSyncGuard` and call the `getData` method with the app name and permissions.
+To use the `@galaxyfins/vikki-data-sync-guard` library, you need to get an instance of `VikkiDataSyncGuard` and call the `getData` method with the app permissions.
 
 ### Example
 
 ```javascript
 import { VikkiDataSyncGuard } from '@galaxyfins/vikki-data-sync-guard';
 
-const appName = 'exampleApp';
-const appData = VikkiDataSyncGuard.getInstance().getData(appName);
+const appData = VikkiDataSyncGuard.getInstance().getData();
 
 console.log(appData);
 ```
 
-In this example, `getData` retrieves the data for the specified mini app based on the provided app name and permissions.
+In this example, `getData` retrieves the data for the specified mini app permissions.
 
 ## API
 
@@ -34,11 +55,9 @@ In this example, `getData` retrieves the data for the specified mini app based o
 
 Returns a singleton instance of `VikkiDataSyncGuard`.
 
-### `getData(appName)`
+### `getData()`
 
 Retrieves the data for the specified mini app.
-
-- `appName` (string): The name of the mini app.
 
 ## License
 
