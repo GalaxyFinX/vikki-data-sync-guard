@@ -1,6 +1,6 @@
 {
   "name": "@galaxyfinx/vikki-data-sync-guard",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "vikki-data-sync-guard",
   "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
