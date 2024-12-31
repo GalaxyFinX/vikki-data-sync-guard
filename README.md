@@ -21,6 +21,7 @@ Example service config file format:
   },
   "client": {
       "app_id": "mini_app_example",
+      "app_key": "1:393366346501:285ea7d8a63c574484756c",
       "permissions": [
         "user_info": {
           "fullName": "read",
