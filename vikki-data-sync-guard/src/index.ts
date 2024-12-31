@@ -1,3 +1,3 @@
 import VikkiDataSyncGuard from './VikkiDataSyncGuard';
 
-export {VikkiDataSyncGuard};
+export { VikkiDataSyncGuard };
